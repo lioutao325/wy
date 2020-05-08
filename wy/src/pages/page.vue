@@ -43,14 +43,15 @@
       </div>
        <div class="floor">
        <!-- 新人专享礼 -->
-      <div class="activity">
-           <div class="title"><span>-</span><p>新人专享礼</p><span>-</span></div>
-              <div class="content">
-                  <div class="left"></div>
-                        <div class="right"></div>
-                  </div>
-            </div>
-
+          <div class="activity">
+           <div class="title">
+             新人专享礼
+          </div>
+          <div class="content">
+              <div class="left"></div>
+                  <div class="right"></div>
+              </div>
+          </div>
       </div>     
   </div> 
 </template>
@@ -145,28 +146,5 @@ export default {
         img 
           width 100%
           height 100%
-    .floor
-      background #eee
-      overflow hidden
-      .activity
-      width 100%
-      margin-top 20px
-      background-color #fff
-      pading 0 30px
-      .title
-        width 100%
-        height 90px
-        float left
-        justify-content center
-        font-size 32px
-        align-items center
-        color #333
-      span 
-        width 30px
-        height 4px
-        background  #666
-        margin 0 10px
-      .content
-        width 100%
-        background-color pink 
+   
 </style>
