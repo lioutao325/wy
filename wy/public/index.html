@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="stylesheet" href="./css/reset.css">
     <style>
       html,body{
         height: 100%;
         width: 100%;
-        overflow: hidden;
+      }
+      *{
+        margin: 0;
+        padding: 0;
       }
     </style>
   </head>
@@ -21,4 +25,9 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <!-- <script>
+    window.onload = function () { 
+     window.viewportUnitsBuggyfill.init({ hacks: window.viewportUnitsBuggyfillHacks });
+    }
+   </script> -->
 </html>
