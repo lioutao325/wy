@@ -1,5 +1,5 @@
 <template>
-  <div>
+   <div> 
     <!-- 输入框 -->
     <van-row>
       <van-col >
@@ -14,15 +14,15 @@
       </van-col>
   </van-row>
       <!-- 列表 -->
-      <van-tabs>
+    <van-tabs>
         <van-tab v-for="(n,inx) in tabBtnlist" :key='inx' :title="n">
-          内容 {{ n }}
-         </van-tab>
-      </van-tabs>
+           <!-- {{ n }} -->
+         </van-tab> 
+     </van-tabs> 
       <!-- 轮播 -->
       <van-swipe   :autoplay="3000" indicator-color="white">
         <van-swipe-item v-for="(n,inx) in imgObj" :key='inx'>
-          <img src="n" >
+          <img src="n.img" >
         </van-swipe-item>
       </van-swipe>
 
@@ -47,35 +47,27 @@
         </van-col>
       </van-row>
       <!-- 商品分类 -->
-      <van-grid :column-num="5">
+      <!-- <van-grid :column-num="5">
         <van-grid-item v-for="(n,inx) in goodCategories" :key="inx" />
           <img : src="n.imgurl"/>
           <div>
             {{n.goodText}}
           </div>
 
-      </van-grid>
-      <!-- 底部导航 -->
-      <van-tabbar v-model="active">
-        <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-        <van-tabbar-item icon="search" dot>分类</van-tabbar-item>
-        <van-tabbar-item icon="friends-o" badge="5">值得买</van-tabbar-item>
-        <van-tabbar-item icon="setting-o" badge="20">购物车</van-tabbar-item>
-        <van-tabbar-item icon="setting-o" badge="20">个人</van-tabbar-item>
-      </van-tabbar>
-  </div>
+      </van-grid> -->
+  </div> 
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'page',
   data() {
     return {
       tabBtnlist:['推荐','居家生活','服饰鞋包','美食酒水','个护清洁','母婴亲子','运动旅行','数码家电','全球特色'],
       imgObj:[
-        "https://yanxuan.nosdn.127.net/91038b7db8982d4288d71f0547a2569d.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
-        "https://yanxuan.nosdn.127.net/8d6ea84dbf81210291edc275327f6c50.jpg?type=webp&imageView&quality=75&thumbnail=750x0",
-        "https://yanxuan.nosdn.127.net/a12c510b428bbcc4fdf1eb4bdfd86ae4.png?type=webp&imageView&quality=75&thumbnail=750x0"
+       {img:require('../assets/lunbo/2bf4fadc1c718c3456aecee6e094bb9c.webp')},
+       {img:require('../assets/lunbo/3988455_1_5_wap_00470d2ea53c9fffa103e84539d45b92.webp')},
+       {img:require('../assets/lunbo/e7faa23b843641c871f34aff7960e43e.webp')},
       ],
       goodCategories:[
         {
@@ -117,16 +109,6 @@ export default {
 </script>
 
 <style scoped>
-  .log{
-    width: 2rem;
-    display: inline-block;
-    margin: .2rem 0 0 .3rem;
-  }
-  .input{
-    width: 3.5rem;
-    margin: 1rem 0 0 .1rem;
-    padding: 0;
-  }
   .btn{
     margin: .15rem  0 0 .2rem;
     width: .8rem; 
@@ -138,9 +120,9 @@ export default {
     border: 1px solid #f00;
   }
   .advert{
-    text-align: center;
+     text-align: center;
     height: .6rem;
-    line-height: .6rem;
+    line-height: .6rem; 
   }
   .advert i{
     display: inline-block;
@@ -149,7 +131,7 @@ export default {
     width: .4rem;
     height: .4rem;
     vertical-align: middle;
-  }
+  } 
   .advert i.icon-1{
     background-image: url('../assets/images/a03dd909803b9ac032eba58b7253a2f6.png');
   }
@@ -158,5 +140,5 @@ export default {
   }
   .advert i.icon-3{
     background-image: url('../assets/images/eb61ee48e8942dbd1784c9ee75ebe955.png');
-  }
+  } 
 </style>
