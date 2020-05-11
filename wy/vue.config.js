@@ -10,7 +10,23 @@ module.exports={
     devServer:{
         
        open:true,
-       proxy: 'http://localhost:3004'
+       proxy: {
+        '/3004':{
+            target:'http://localhost:3004',
+            changeOrigin:true,
+            pathRewrite:{
+               "^/3004":""
+            }
+        },
+        '/wangyi': {
+            target: 'https://m.you.163.com',
+            changeOrigin: true,
+            secure:false,
+            pathRewrite:{
+                "^/wangyi":""
+            }
+        }
+       }
     },
     configureWebpack:{
         resolve: {
@@ -18,7 +34,9 @@ module.exports={
                 'components': resolve('src/components'),
                 'pages': resolve('src/pages'),
                 'store': resolve('src/store'),
+                'http': resolve('src/http'),
             }
         }
     }
+
 }

@@ -1,6 +1,6 @@
 import shop from "@/http/shop";
-import wrap from "@/http/wrap";
+import wangyi from '@/http/wangyi'
 export default {
     shop,
-    wrap
+    wangyi 
 }

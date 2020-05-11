@@ -4,6 +4,17 @@ export default {
     getIndexData:{
       url:"/indexData",
       method:"get",
+      corsUrl:'/3004'
+    },
+    getCateNavData:{
+      url:"/getCateNavData",
+      method:"get",
+      corsUrl:'/3004'
+    },
+    getCateList:{
+      url:"/getCateList",
+      method:"get",
+      corsUrl:'/3004'
     }
 }
 }

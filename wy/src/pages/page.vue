@@ -1,10 +1,12 @@
 <template>
-   <div> 
+   <div class="wepper" ref="wepper"> 
     <!-- 输入框 -->
     <div class="header">
       <img src="../assets/images/logo.png" alt="" style="width:69px;height:20px">
       <div class="inputSc">
-        <span class="input"><van-icon name="search"  /> 请输入关键字</span>
+        <span class="input"  @click="$router.push('/search')">
+          请输入搜索关键词
+        </span>
       </div>
       <button class = 'btn'>登录</button>
     </div>
@@ -41,22 +43,26 @@
       <div class="advertising">
            <img src="https://yanxuan.nosdn.127.net/7db5ad89be165b82b6a3e261029d0122.gif?imageView&quality=75" alt="">
       </div>
-       <div class="floor">
-       <!-- 新人专享礼 -->
-          <div class="activity">
-           <div class="title">
-             新人专享礼
+       <!-- 热销榜 -->
+      <div class="List">
+        <div class="heard">类目热销榜</div>
+        <div class="list-for" v-for="(item,inx) in shopData.categoryHotSellModule.categoryList" :key="inx">
+          <div class="Sellwell">
+            <span>{{item.categoryName}}</span>
+            <img :src="item.showPicUrl" alt="">
+            <a :href="item.targetUrl"></a>
           </div>
-          <div class="content">
-              <div class="left"></div>
-                  <div class="right"></div>
-              </div>
-          </div>
-      </div>     
+        </div>
+      </div>
+       
+        <div class="haha" style="height:100px;background:#333;color:#fff;"> 
+           footer 
+        </div>
   </div> 
 </template>
 
 <script>
+// import BScroll from 'better-scroll'
 import {mapState,mapActions} from 'vuex'
 import {INDEXDATE} from 'store/mutation_types'
 export default {
@@ -64,6 +70,7 @@ export default {
   data() {
     return {
       tabBtnlist:['推荐','居家生活','服饰鞋包','美食酒水','个护清洁','母婴亲子','运动旅行','数码家电','全球特色'],
+      
     }
   },
    computed: {
@@ -71,10 +78,12 @@ export default {
   },
   methods: {
     ...mapActions([INDEXDATE])
+    
   },
   async mounted() {
    await this[INDEXDATE]()
-   console.log(this.shopData)
+  // new BScroll (this.$refs.wepper)
+  //  console.log(this.shopData.categoryHotSellModule.categoryList)
   },
 }
 
@@ -146,5 +155,22 @@ export default {
         img 
           width 100%
           height 100%
-   
+    .List
+        width 100%
+        height 100% 
+        
+        .heard
+          height 30px
+          line-height 30px
+          font-size 18px
+          margin-left 10px
+          margin-bottom 8px
+        .list-for
+           align-items center
+           margin-left 5px
+          img 
+           width 100%
+           height 150px
+          span 
+           font-size 14px
 </style>
